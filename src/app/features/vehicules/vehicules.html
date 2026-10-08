@@ -1,0 +1,36 @@
+<div class="container_vehicule">
+    <app-navbar-component></app-navbar-component>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Type</th>
+                <th>Marque</th>
+                <th>Modèle</th>
+                <th>Année</th>
+                <th>Détail</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @for(vehicule of vehicules; track vehicule.id){
+            <tr>
+                <td>{{vehicule.id}}</td>
+                <td>@if(vehicule.nbPorte){voiture}@else{Moto}</td>
+                <td>{{vehicule.marque}}</td>
+                <td>{{vehicule.modele}}</td>
+                <td>{{vehicule.annee}}</td>
+                <td>@if(vehicule.nbPorte){
+                    {{vehicule.nbPorte}}
+                    } @else {
+                        {{vehicule.cylindree}} cm cube
+                    }
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
