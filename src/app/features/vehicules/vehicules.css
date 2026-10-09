@@ -1,70 +1,88 @@
-.container_vehicule{
-    background-color : #2C2C2C;
-    height: 100vh;
+/* CONTENEUR PRINCIPAL */
+
+.container_vehicule {
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #151925 0%,
+        #1c2030 55%,
+        #292331 100%
+    );
+
+    padding: 30px 40px 60px;
+    box-sizing: border-box;
+    color: #f1f2fa;
 }
+
+/* TABLEAU */
 
 table {
     width: 100%;
-    border-collapse: collapse;
-    background-color: white;
-    margin-top: 50px;
-}
+    max-width: 1300px;
+    margin: 50px auto 0;
 
-.container_vehicule {
-    background-color: #2C2C2C;
-    min-height: 100vh;
-    padding-bottom: 40px;
-}
+    border-collapse: separate;
+    border-spacing: 0;
 
-table {
-    width: calc(100% - 80px);
-    margin: 50px auto 0 auto;
+    background: rgba(41, 45, 58, 0.85);
 
-    border-collapse: collapse;
+    border: 1px solid #464c68;
+    border-radius: 16px;
 
-    background-color: #1f1f1f;
-    color: white;
-
-    border-radius: 12px;
     overflow: hidden;
 
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px);
 }
 
+/* EN-TÊTE */
+
 thead {
-    background-color: #161616;
+    background: #1c2030;
 }
 
 th {
-    padding: 18px 20px;
+    padding: 20px 22px;
     text-align: left;
 
-    font-size: 14px;
-    font-weight: 600;
+    color: #a1a5bb;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
     text-transform: uppercase;
 
-    color: #cfcfcf;
-
-    border-bottom: 1px solid #3a3a3a;
+    border-bottom: 1px solid #464c68;
 }
+
+/* CELLULES */
 
 td {
-    padding: 16px 20px;
+    padding: 18px 22px;
 
-    font-size: 15px;
-    color: #e7e7e7;
+    font-size: 14px;
+    color: #f1f2fa;
 
-    border-bottom: 1px solid #333333;
+    border-bottom: 1px solid rgba(70, 76, 104, 0.45);
 }
 
+/* LIGNES */
+
 tbody tr {
-    transition: background-color 0.2s ease;
+    transition:
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+tbody tr:nth-child(even) {
+    background: rgba(28, 32, 48, 0.25);
 }
 
 tbody tr:hover {
-    background-color: #292929;
+    background: rgba(138, 79, 89, 0.17);
+    box-shadow: inset 3px 0 0 #ff8b90;
 }
 
 tbody tr:last-child td {
     border-bottom: none;
 }
+

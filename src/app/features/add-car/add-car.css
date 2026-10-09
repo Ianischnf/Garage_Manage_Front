@@ -1,0 +1,181 @@
+/* CONTENEUR PRINCIPAL */
+
+.container_form {
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    #151925 0%,
+    #1c2030 55%,
+    #292331 100%
+  );
+
+  padding: 30px 40px 60px;
+  box-sizing: border-box;
+  color: #f1f2fa;
+}
+
+/* TITRE */
+
+.container_form h2 {
+  max-width: 650px;
+  margin: 45px auto 8px;
+
+  font-size: 30px;
+  font-weight: 700;
+  color: #f1f2fa;
+  letter-spacing: -0.5px;
+}
+
+.container_form > p {
+  max-width: 650px;
+  margin: 0 auto 30px;
+
+  font-size: 14px;
+  color: #a1a5bb;
+}
+
+/* FORMULAIRE */
+
+.container_form form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 35px;
+
+  background: rgba(41, 45, 58, 0.85);
+
+  border: 1px solid #464c68;
+  border-radius: 18px;
+
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+
+  backdrop-filter: blur(12px);
+}
+
+/* CHAMPS SUR DEUX COLONNES */
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* SELECT TYPE DE VEHICULE */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f1f2fa;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 14px 16px;
+
+  color: #f1f2fa;
+  background-color: #1c2030;
+
+  border: 1px solid #464c68;
+  border-radius: 10px;
+
+  font-size: 14px;
+  font-family: inherit;
+
+  outline: none;
+  cursor: pointer;
+
+  transition: border-color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.form-group select:hover {
+  border-color: #8a4f59;
+}
+
+.form-group select:focus {
+  border-color: #ff8b90;
+  box-shadow: 0 0 0 4px rgba(255, 139, 144, 0.1);
+}
+
+.form-group select option {
+  background: #292d3a;
+  color: #f1f2fa;
+}
+
+/* BOUTON AJOUTER */
+
+.container_form button[type="submit"] {
+  width: 100%;
+  padding: 15px 20px;
+  margin-top: 8px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+
+  background: linear-gradient(
+    135deg,
+    #51323c,
+    #6b3f49,
+    #8a4f59
+  );
+
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+
+  cursor: pointer;
+
+  box-shadow: 0 6px 20px rgba(81, 50, 60, 0.25);
+
+  transition: transform 0.2s ease,
+              box-shadow 0.2s ease,
+              filter 0.2s ease;
+}
+
+.container_form button[type="submit"]:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.15);
+  box-shadow: 0 10px 25px rgba(138, 79, 89, 0.3);
+}
+
+.container_form button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+.container_form button[type="submit"]:focus-visible {
+  outline: 2px solid #ff8b90;
+  outline-offset: 3px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .container_form {
+    padding: 20px 15px 40px;
+  }
+
+  .container_form h2 {
+    margin-top: 30px;
+    font-size: 25px;
+  }
+
+  .container_form form {
+    padding: 25px 20px;
+    gap: 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { VehiculeService } from '../../services/vehicule.service';
 import { NavbarComponent } from '../../component/navbar-component/navbar-component';
+
 
 @Component({
   selector: 'app-vehicules',
@@ -10,7 +11,9 @@ import { NavbarComponent } from '../../component/navbar-component/navbar-compone
 })
 export class Vehicules implements OnInit{
 
-  constructor( private vehiculeService : VehiculeService){}
+  constructor( private vehiculeService : VehiculeService,
+                private cdr: ChangeDetectorRef
+  ){}
 
   vehicules: any[] = [];
 
@@ -19,6 +22,7 @@ export class Vehicules implements OnInit{
         next: (data) => {
           this.vehicules = data;
           console.log("Vehicules : ", data);
+          this.cdr.detectChanges();
         },
         error: (error) => {
           console.log(error);

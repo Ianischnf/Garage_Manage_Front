@@ -1,1 +1,68 @@
-<p>add-car works!</p>
+
+<div class="container_form">
+
+    <app-navbar-component></app-navbar-component>
+
+  <h2>Ajouter un véhicule</h2>
+  <p>Renseignez les informations du véhicule</p>
+
+  <form #ajoutVehiculeForm="ngForm" (ngSubmit)="onSubmit(ajoutVehiculeForm)">
+
+    <div class="form-group">
+      <label>Type de véhicule</label>
+
+      <select
+        name="type"
+        [(ngModel)]="typeVehicule"
+      >
+        <option value="VOITURE">Voiture</option>
+        <option value="MOTO">Moto</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <app-input-component
+        label="Marque"
+        placeholder="Ex : Peugeot"
+        (valueChange)="marque = $event"
+      />
+
+      <app-input-component
+        label="Modèle"
+        placeholder="Ex : 208"
+        (valueChange)="modele = $event"
+      />
+    </div>
+
+    <app-input-component
+      label="Année"
+      type="number"
+      placeholder="Ex : 2022"
+      (valueChange)="annee = +$event"
+    />
+
+    @if (typeVehicule === 'VOITURE') {
+      <app-input-component
+        label="Nombre de portes"
+        type="number"
+        placeholder="Ex : 5"
+        (valueChange)="nbPorte = +$event"
+      />
+    }
+
+    @if (typeVehicule === 'MOTO') {
+      <app-input-component
+        label="Cylindrée"
+        type="number"
+        placeholder="Ex : 689"
+        (valueChange)="cylindree = +$event"
+      />
+    }
+
+    <button type="submit">
+      Ajouter le véhicule
+    </button>
+
+  </form>
+
+</div>
