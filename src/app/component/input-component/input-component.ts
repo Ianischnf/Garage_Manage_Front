@@ -9,7 +9,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class InputComponent {
   @Input() label = '';
   @Input() placeholder = '';
-  @Input() type: 'text' | 'email' | 'password' | 'number' = 'text';
+  @Input() type: 'text' | 'email' | 'number' = 'text';
 
   @Output() valueChange = new EventEmitter<string>();
 

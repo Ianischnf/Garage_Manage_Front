@@ -1,0 +1,28 @@
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* Bouton Modifier */
+.btn-modifier {
+  background-color: #2563eb;
+}
+
+.btn-modifier:hover {
+  background-color: #1d4ed8;
+}
+
+/* Bouton Supprimer */
+.btn-supprimer {
+  background-color: #dc2626;
+}
+
+.btn-supprimer:hover {
+  background-color: #b91c1c;
+}
